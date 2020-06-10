@@ -1,0 +1,31 @@
+{
+	"PolicyForCodePipeline": {
+		"Type": "AWS::IAM::Policy",
+		"Properties": {
+			"Roles": [
+				{ "Ref": "CodePipelineXXXRole" }
+			],
+			"PolicyName": "s3_artifact_put",
+			"PolicyDocument": {
+				"Version": "2012-10-17",
+				"Statement": [
+					{
+						"Sid": "S3Artifact",
+						"Effect": "Allow",
+						"Action": "s3:PutObject",
+						"Resource": { "Fn::Sub": "arn:aws:s3:::${CodePipelineArtifactsParam}/*"}
+					},
+					{
+						"Sid": "StartBuild",
+						"Effect": "Allow",
+						"Action": [
+							"codebuild:BatchGetBuilds",
+							"codebuild:StartBuild"
+						],
+						"Resource": { "Fn::Sub": "arn:aws:codebuild:${AWS::Region}:${AWS::AccountId}:project/*" }
+					}
+				]
+			}
+		}
+	}
+}

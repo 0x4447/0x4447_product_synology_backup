@@ -1,0 +1,9 @@
+{
+	"StageParam": {
+		"Description": "Select what Stage are you deploying. So we know to which resources to link to when we deploy Lambda Functions, since the code can come from different branches.",
+		"Type": "String",
+		"AllowedValues": ["master", "development"],
+		"Default": "development",
+		"ConstraintDescription": "must only contain lowercase letters and numbers, and can't start with a number."
+	}
+}

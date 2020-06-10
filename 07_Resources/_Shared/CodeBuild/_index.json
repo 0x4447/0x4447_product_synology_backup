@@ -1,0 +1,23 @@
+ {
+	"CodeBuild": {
+		"Type": "AWS::CodeBuild::Project",
+		"DependsOn": "CodeBuildRole",
+		"Properties": {
+			"Name": "xxx_reusable",
+			"ServiceRole": { "Fn::GetAtt": ["CodeBuildRole", "Arn"] },
+			"TimeoutInMinutes": 60,
+			"Source": {
+				"Type": "CODEPIPELINE",
+				"BuildSpec": "buildspec.yml"
+			},
+			"Artifacts": {
+				"Type": "CODEPIPELINE"
+			},
+			"Environment": {
+				"Type": "LINUX_CONTAINER",
+				"ComputeType": "BUILD_GENERAL1_SMALL",
+				"Image": "aws/codebuild/standard:3.0"
+			}
+		}
+	}
+}

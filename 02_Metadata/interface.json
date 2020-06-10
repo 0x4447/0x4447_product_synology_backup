@@ -1,0 +1,21 @@
+{
+    "AWS::CloudFormation::Interface" : {
+            "ParameterGroups": [
+                {
+                    "Label": {
+                        "default": "Basic"
+                    },
+                    "Parameters": [
+                        "CodePipelineArtifactsParam",
+                        "GitHubTokenParam",
+                        "StageParam"
+                    ]
+                }
+            ],
+            "ParameterLabels": {
+                "CodePipelineArtifactsParam": { "default": "CodePipeline Artifacts Bucket" },
+                "GitHubTokenParam": { "default": "GitHub Token" },
+                "StageParam": { "default": "Stage" }
+            }
+        }
+}
