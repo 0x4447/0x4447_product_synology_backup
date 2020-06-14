@@ -1,6 +1,6 @@
-# Title me
+# Synology Backup
 
-Describe me
+This stack will create all that is needed to allow Synology to backup your date to S3 Glacier, by creating the most strick AMI Policy despite the fact that Synology is setup to make a Vault on your behalf. Check the policy to see all the details.
 
 # DISCLAIMER!
 
@@ -8,30 +8,30 @@ This stack is available to anyone at no cost, but on an as-is basis. 0x4447, LLC
 
 # How to deploy
 
-<a target="_blank" href="https://console.aws.amazon.com/cloudformation/home#/stacks/new?stackName=zer0x4447-XXX&templateURL=https://s3.amazonaws.com/0x4447-drive-cloudformation/XXX.json">
+<a target="_blank" href="https://console.aws.amazon.com/cloudformation/home#/stacks/new?stackName=zer0x4447-synology-backup&templateURL=https://s3.amazonaws.com/0x4447-drive-cloudformation/synology-backup.json">
 <img align="left" style="float: left; margin: 0 10px 0 0;" src="https://s3.amazonaws.com/cloudformation-examples/cloudformation-launch-stack.png"></a>
 
-All you need to do to deploy this stack is click the button to the left and follow the instructions that CloudFormation provides in your AWS Dashboard. Alternatively you can download the CF file from [here](https://s3.amazonaws.com/0x4447-drive-cloudformation/XXX.json).
+All you need to do to deploy this stack is click the button to the left and follow the instructions that CloudFormation provides in your AWS Dashboard. Alternatively you can download the CF file from [here](https://s3.amazonaws.com/0x4447-drive-cloudformation/synology-backup.json).
 
 # What will deploy?
 
-![XXX Diagram](https://raw.githubusercontent.com/0x4447/0x4447-product-XXX/assets/diagram.png)
+![synology-s3-glacier Diagram](https://raw.githubusercontent.com/0x4447/0x4447_product_synology_backup/assets/diagram.png)
 
-List me
-
-All project resources can be found [here](https://github.com/topics/0x4447-product-XXX).
-
-# Auto deploy
-
-The stack is set up in a such a way that any time new code is pushed to a selected branch, the CodePipeline picks up the change and updates the Lambda for you. These are the available branches:
+- 1x IAM User with Policy
 
 # Manual work
 
-Work me
+- Go to the AWS Console
+- Go to the IAM Service
+- From the left menu click on `Users`
+- Click on the new user that was created by this project
+- Click on the tab called `Security credentials`
+- Then in the `Access keys` section, click the `Create access key` button.
+- Lastelly copy the credentials in a secure place, this credentials needs to passed to Synology.
 
 # Pricing
 
-Price me.
+Default S3 Glacier pricing applies, find out more [here](https://aws.amazon.com/glacier/pricing/).
 
 # How to generate the CloudFormation file
 

@@ -1,0 +1,70 @@
+{
+    "S3GlacierUser": {
+        "Type": "AWS::IAM::User",
+        "Properties": {
+            "UserName": {
+                "Fn::Sub": "${AWSAccountNameParam}-${UniqueIdentifierParam}-synology-backup"
+            },
+            "Policies": [
+                {
+                    "PolicyName": "Glacier_Vault",
+                    "PolicyDocument": {
+                        "Version": "2012-10-17",
+                        "Statement": [
+                            {
+                                "Sid": "PerformWork",
+                                "Effect": "Allow",
+                                "Action": [
+                                    "glacier:InitiateJob",
+                                    "glacier:AbortMultipartUpload",
+                                    "glacier:GetVaultAccessPolicy",
+                                    "glacier:CreateVault",
+                                    "glacier:ListTagsForVault",
+                                    "glacier:DescribeVault",
+                                    "glacier:AddTagsToVault",
+                                    "glacier:GetJobOutput",
+                                    "glacier:ListParts",
+                                    "glacier:GetVaultNotifications",
+                                    "glacier:DescribeJob",
+                                    "glacier:ListJobs",
+                                    "glacier:ListMultipartUploads",
+                                    "glacier:CompleteMultipartUpload",
+                                    "glacier:InitiateMultipartUpload",
+                                    "glacier:UploadMultipartPart",
+                                    "glacier:UploadArchive",
+                                    "glacier:GetVaultLock",
+                                    "glacier:DeleteArchive"
+                                ],
+                                "Resource": { "Fn::Sub": "arn:aws:glacier:${AWS::Region}:${AWS::AccountId}:vaults/Synology_*" }
+                            },
+                            {
+                                "Sid": "Listing",
+                                "Effect": "Allow",
+                                "Action": [
+                                    "glacier:GetDataRetrievalPolicy",
+                                    "glacier:ListVaults",
+                                    "glacier:ListProvisionedCapacity"
+                                ],
+                                "Resource": "*"
+                            }
+                        ]
+                    }
+                }
+            ],
+            "Tags": [
+                {
+                    "Key": "Project Name",
+                    "Value": "Synology Backup"
+                },
+                {
+                    "Key": "Author",
+                    "Value": "0x4447 LLC"
+                },
+                {
+                    "Key": "Info",
+                    "Value": "https://0x4447.com"
+                }
+            ]
+        }
+    }
+}

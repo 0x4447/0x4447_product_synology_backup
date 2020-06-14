@@ -1,0 +1,6 @@
+{
+	"AWSAccountNameParam": {
+		"Description": "The name of the AWS Account you are deploying this stack in to. And this will be the second parameter in the Bucket name.",
+		"Type": "String"
+	}
+}

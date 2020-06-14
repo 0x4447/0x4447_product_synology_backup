@@ -1,1 +1,1 @@
-Describe me!
+This stack created all that is necessery to backup your Synology to S3 Glacier, including creating the IAM user.

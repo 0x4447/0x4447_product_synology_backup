@@ -1,0 +1,6 @@
+{
+	"IAMUserOutput": {
+		"Value": { "Ref": "S3GlacierUser" },
+		"Description": "The Synology User Name."
+	}
+}

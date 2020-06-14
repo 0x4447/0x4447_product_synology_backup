@@ -1,0 +1,6 @@
+{
+	"UniqueIdentifierParam": {
+		"Description": "Provide a unique name of this deployment. We are going to append to all AWS resources that require uniquenss.",
+        "Type": "String"
+	}
+}
