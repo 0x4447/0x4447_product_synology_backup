@@ -2,6 +2,13 @@
 
 This stack will create all that is needed to allow Synology to backup your date to S3 Glacier, by creating the most strick AMI Policy despite the fact that Synology is setup to make a Vault on your behalf. Check the policy to see all the details.
 
+# Companion Video
+
+If you want to follow up on how this stack was created, check this two videos:
+
+- [Part 1](https://www.youtube.com/watch?v=XrEaMN1QBj4)
+- [Part 2](https://www.youtube.com/watch?v=rUtXZeMEonM)
+
 # DISCLAIMER!
 
 This stack is available to anyone at no cost, but on an as-is basis. 0x4447, LLC. is not responsible for damages or costs of any kind that may occur when you use the stack. You take full responsibility when you use it.
